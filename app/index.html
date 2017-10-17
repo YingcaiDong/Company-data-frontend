@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="CompanyData">
+  <head>
+    <meta charset="utf-8">
+    <title>Company Data Management</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="employee-list/employee-list.module.js"></script>
+    <script src="employee-list/employee-list.component.js"></script>
+  </head>
+  <body>
+    <!-- Use a custom component to render a list of employees -->
+    <div class="header">
+      <ul>
+        <li><a class="eleOfHeader" href="#home">Employee</a></li>
+        <li><a href="#news">Department</a></li>
+        <li style="float:right"><a href="#about">About</a></li>
+      </ul>
+    </div>
+
+
+    <employee-list></employee-list>
+
+    <a href="https://pixabay.com/" class="end">
+      <span>Thumbnail image provide by:</span>
+      <i style="display:block;width:68px;height:18px;overflow:hidden">
+        <img ng-src="img/logo/logo.png" style="width:94px" align="middle">
+      </i> Free Images
+    </a>
+  </body>
+</html>

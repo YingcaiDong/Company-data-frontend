@@ -1,0 +1,64 @@
+<div class="container-fluid">
+
+  <h1 align="center">Employee Data</h1>
+
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" placeholder="   in this page"/>
+      </p>
+
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="birth_date">Birth Date</option>
+          <option value="emp_no">Employee Number</option>
+          <option value="first_name">First Name</option>
+          <option value="last_name">Last Name</option>
+          <option value="gender">Gender</option>
+          <option value="hire_date">Hire Date</option>
+        </select>
+      </p>
+
+      <p>
+        Search Employee No:
+        <input>
+      </p>
+    </div>
+
+    <div class="col-md-10">
+      <!--Body content-->
+      <ul class="employees">
+        <li ng-repeat="employee in $ctrl.employees | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+          <a href="null" class="thumb">
+            <img ng-src="{{$ctrl.thumbnail[$index]}}" alt="Employee ID: {{employee.emp_no}}" />
+          </a>
+          <a>{{employee.first_name}} {{employee.last_name}}</a>
+
+          <table text_align="center">
+            <tr>
+              <td width="50%">Employee No: {{employee.emp_no}}</td>
+              <td width="45%">Birth Date: {{employee.birth_date}}</td>
+              <td width="50%">
+                <button class="button">Salay</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Gender: {{employee.gender}}</td>
+              <td>Hire date: {{employee.hire_date}}</td>
+              <td>
+                <button class="button">Title</button>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+</div>
