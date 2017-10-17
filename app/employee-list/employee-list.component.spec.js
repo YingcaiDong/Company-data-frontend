@@ -1,12 +1,12 @@
 'use strict';
 
-describe('phoneList', function() {
+describe('employeeList', function() {
 
-  // Load the module that contains the `phoneList` component before each test
-  beforeEach(module('phoneList'));
+  // Load the module that contains the `employeeList` component before each test
+  beforeEach(module('employeeList'));
 
   // Test the controller
-  describe('PhoneListController', function() {
+  describe('EmployeeListController', function() {
     var $httpBackend, ctrl;
 
     // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
@@ -14,21 +14,21 @@ describe('phoneList', function() {
     // as the service while avoiding a name conflict.
     beforeEach(inject(function($componentController, _$httpBackend_) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/phones.json')
-                  .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      $httpBackend.expectGET('http://localhost:8080/employees/range/10001to10020')
+                  .respond([{first_name: 'Tzvetan'}, {last_name: 'Bouloucos'}]);
 
-      ctrl = $componentController('phoneList');
+      ctrl = $componentController('employeeList');
     }));
 
-    it('should create a `phones` property with 2 phones fetched with `$http`', function() {
-      expect(ctrl.phones).toBeUndefined();
+    it('should create a `employees` property with 2 employees fetched with `$http`', function() {
+      expect(ctrl.employees).toBeUndefined();
 
       $httpBackend.flush();
-      expect(ctrl.phones).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      expect(ctrl.employees).toEqual([{first_name: 'Tzvetan'}, {last_name: 'Bouloucos'}]);
     });
 
     it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('age');
+      expect(ctrl.orderProp).toBe('emp_no');
     });
 
   });

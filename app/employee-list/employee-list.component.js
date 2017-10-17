@@ -17,7 +17,6 @@ angular.
       var API_KEY = '6728169-c144c00092689f1b51c8f3c98';
       var url = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent('man');
       self.thumbnail = [];
-      console.log('你好');
       $http.get(url).then(function (response) {
           var dataReceived = response.data;
           if (parseInt(dataReceived.totalHits) > 0) {
