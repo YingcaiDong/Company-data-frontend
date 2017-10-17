@@ -15,3 +15,6 @@ In Terminal, use `$ cd directory_name` to direact to this project folder and run
 `$ npm start`
 
 Open link  http://localhost:8000 in Chrome or Safari.
+
+Application Preview:
+![screencapture-localhost-63342-company-employee-data-web-app-index-html-1508217454583](https://user-images.githubusercontent.com/22902303/31647921-09f9f726-b2d9-11e7-8fb6-0c09654ec769.png)
